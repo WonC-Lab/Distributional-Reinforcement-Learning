@@ -23,6 +23,11 @@ market_ez_cache_*.csv
 dist_rl_ez_*.csv
 figure_ez_*.png
 
+# Allow specific figures for README display
+!figure_ez_portfolio_growth.png
+!figure_ez_asset_allocation.png
+!figure_ez_consumption_rate.png
+
 # IDE settings
 .vscode/
 .idea/

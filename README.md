@@ -88,10 +88,28 @@ python plot_academic_results.py
 
 ---
 
+## 📊 Empirical Results & Visualizations
+
+The out-of-sample (2022–2025) results demonstrate the successful optimization of consumption and portfolio choices under the Epstein-Zin framework.
+
+### 1. Cumulative Portfolio Growth
+Shows the impact of risk aversion ($\gamma$) on out-of-sample growth. The $\gamma=8.0$ configurations successfully mitigate downside risk compared to the $\gamma=2.0$ settings.
+![Portfolio Growth](figure_ez_portfolio_growth.png)
+
+### 2. Dynamic Asset Allocation
+The asset weight transitions for the $\gamma=8.0, \psi=1.5$ agent showing capital reallocation into safe-haven assets (GLD, TLT) during high VIX regimes.
+![Asset Allocation](figure_ez_asset_allocation.png)
+
+### 3. Consumption-Wealth Ratio Trajectory
+Illustrates the separation of risk aversion and the intertemporal elasticity of substitution. A higher IES ($\psi=1.5$) enables dynamic consumption adjustments based on market opportunities, while a lower IES ($\psi=0.5$) keeps consumption flat and smooth.
+![Consumption Rate](figure_ez_consumption_rate.png)
+
+---
+
 ## 📁 Repository Structure
 
 * `dynamic_ez_env.py`: Market simulator with Yahoo Finance download and transaction cost calculation.
 * `dynamic_ez_agent.py`: Actor, Critic, and Log-Sum-Exp solver implementations.
 * `run_experiment.py`: Main script for training loop and grid search.
 * `plot_academic_results.py`: Script to generate result plots.
-* `.gitignore`: Configured to exclude all private paper drafts (`*.tex`), local data caching (`*.csv`), and result images (`*.png`).
+* `.gitignore`: Configured to exclude all private paper drafts (`*.tex`), local data caching (`*.csv`), and general plot outputs (except the three specific figures for README display).
