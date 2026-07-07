@@ -88,6 +88,7 @@ python plot_academic_results.py
 
 ---
 
+<<<<<<< HEAD
 ## 📊 Empirical Results & Visualizations
 
 The out-of-sample (2022–2025) results demonstrate the successful optimization of consumption and portfolio choices under the Epstein-Zin framework.
