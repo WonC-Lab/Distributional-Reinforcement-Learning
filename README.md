@@ -4,7 +4,7 @@ Developed by **WonChan Cho** (Department of Mathematics, Sungkyunkwan University
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This repository contains the implementation of a mathematically rigorous framework combining **Deep Distributional Reinforcement Learning (DRL)** with **Epstein-Zin (EZ) recursive preferences** to solve the dynamic, high-dimensional consumption-portfolio choice problem in the presence of transaction costs.
 
@@ -12,7 +12,7 @@ By utilizing an **Implicit Quantile Network (IQN)** to learn the full utility-ad
 
 ---
 
-## 📈 Theoretical Framework
+## Theoretical Framework
 
 ### 1. Epstein-Zin Recursive Utility
 We consider an investor on a filtered probability space $(\Omega, \mathcal{F}, \{\mathcal{F}_t\}_{t=0}^\infty, \mathbb{P})$ who dynamically chooses a consumption fraction $c_t \equiv C_t/W_t \in (0, 1)$ and portfolio weights $\mathbf{w}_t \in \Delta^N$. The lifetime recursive utility is defined as:
@@ -49,7 +49,7 @@ where $c_t^*$ is the optimal consumption rate.
 
 ---
 
-## 🛠️ Methodological Architecture
+## Methodological Architecture
 
 ### 1. AssetTransformer (Permutation Invariance)
 To process arbitrary dimensions of asset pools without index-order bias, we implement a self-attention transformer network over the asset dimension:
@@ -65,7 +65,7 @@ $$\mathcal{R}_t(Y_{t+1}) = \exp \left( \frac{1}{1 - \gamma} \left( \text{log\_su
 
 ---
 
-## 🚀 Execution Guide
+## Execution Guide
 
 ### 1. Prerequisites
 Ensure you have the required packages installed:
@@ -88,7 +88,7 @@ python plot_academic_results.py
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 * `dynamic_ez_env.py`: Market simulator with Yahoo Finance download and transaction cost calculation.
 * `dynamic_ez_agent.py`: Actor, Critic, and Log-Sum-Exp solver implementations.
