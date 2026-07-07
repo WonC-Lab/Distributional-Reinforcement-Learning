@@ -1,0 +1,28 @@
+# ==============================================================================
+# Git Ignore Configuration
+# Author: WonChan Cho
+# Date: July 07, 2026
+# Description: Prevents uploading LaTeX paper drafts, CSV data, and plots.
+# ==============================================================================
+
+# LaTeX files (as requested, do not upload paper tex files)
+*.tex
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.pdf
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Large CSV data files and generated plot results
+market_ez_cache_*.csv
+dist_rl_ez_*.csv
+figure_ez_*.png
+
+# IDE settings
+.vscode/
+.idea/
