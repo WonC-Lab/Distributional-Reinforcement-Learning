@@ -43,8 +43,8 @@ $\kappa \equiv \beta \cdot \sup_{s, \mathbf{w}} \left( \mathbb{E} \left[ R_p(\ma
 then the operator $\mathcal{T}$ is a local contraction mapping on the Banach space of continuous functions under the supremum norm, ensuring the existence of a unique optimal value function $v^*$.
 
 #### Theorem 3 (Transaction-Cost-Induced No-Trade Region)
-Given a turnover transaction cost rate $cost > 0$, the optimal policy implements a no-trade region where the investor chooses not to rebalance ${\mathbf{w}_t^* = \mathbf{w}_{t-1}^{\text{adj}}$ if and only if:
-$\left\| \nabla_{\mathbf{w}} v_t(\mathbf{s}_t) \right\|_2 < \text{cost} \cdot (1 - c_t^*)}$
+Given a turnover transaction cost rate $cost > 0$, the optimal policy implements a no-trade region where the investor chooses not to rebalance $\mathbf{w}_t^* = \mathbf{w}_{t-1}^{\text{adj}}$ if and only if:
+$\left\| \nabla_{\mathbf{w}} v_t(\mathbf{s}_t) \right\|_2 < \text{cost} \cdot (1 - c_t^*)$
 where $c_t^*$ is the optimal consumption rate.
 
 ---
