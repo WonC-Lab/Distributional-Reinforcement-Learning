@@ -29,7 +29,7 @@ $$V_t(W_t, \mathbf{s}_t) = W_t \cdot v_t(\mathbf{s}_t)$$
 This reduces the problem to solving in weight space, independent of absolute wealth.
 
 **Lemma 1 — Quantile Representation.** The certainty equivalent equals a Lebesgue integral over quantiles:
-$$\mathcal{R}_t(Y_{t+1}) = \left( \int_0^1 \left( q_Y(\tau) \right)^{1 - \gamma} d\tau \right)^{\frac{1}{1 - \gamma}}$$
+$\mathcal{R}_t(Y_{t+1}) = \left( \int_0^1 \left( q_Y(\tau) \right)^{1 - \gamma} d\tau \right)^{\frac{1}{1 - \gamma}}$
 This justifies using IQN outputs directly as Bellman targets.
 
 **Theorem 2 — Contraction Mapping.** The EZ Bellman operator $\mathcal{T}$ is a local contraction on $\mathcal{C}(\mathcal{S})$ under the supremum norm when:
