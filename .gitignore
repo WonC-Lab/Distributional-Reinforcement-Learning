@@ -1,11 +1,11 @@
 # ==============================================================================
 # Git Ignore Configuration
 # Author: WonChan Cho
-# Date: July 07, 2026
+# Date: July 08, 2026
 # Description: Prevents uploading LaTeX paper drafts, CSV data, and plots.
 # ==============================================================================
 
-# LaTeX files (as requested, do not upload paper tex files)
+# LaTeX files (paper draft kept private)
 *.tex
 *.aux
 *.log
@@ -18,15 +18,28 @@
 __pycache__/
 *.pyc
 
-# Large CSV data files and generated plot results
+# Large market data cache and raw result CSVs
 market_ez_cache_*.csv
-dist_rl_ez_*.csv
+dist_rl_ez_experiment_returns.csv
+dist_rl_ez_consumption.csv
+dist_rl_ez_rep_weights.csv
+
+# Allow summary CSVs (small, useful for readers)
+!dist_rl_ez_summary_stats.csv
+!dist_rl_ez_extended_metrics.csv
+!dist_rl_ez_within_model_tests.csv
+
+# Exclude all figures by default
 figure_ez_*.png
 
-# Allow specific figures for README display
+# Allow key paper figures for README display
 !figure_ez_portfolio_growth.png
 !figure_ez_asset_allocation.png
 !figure_ez_consumption_rate.png
+!figure_ez_ablation.png
+!figure_ez_sharpe_comparison.png
+!figure_ez_cer_comparison.png
+!figure_ez_sortino_calmar.png
 
 # IDE settings
 .vscode/

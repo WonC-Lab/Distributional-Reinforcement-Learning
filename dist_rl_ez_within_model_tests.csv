@@ -1,0 +1,6 @@
+comparison,a,b,sharpe_a,sharpe_b,t_stat,p_val,sig
+psi effect at gamma=2,EZ_g2.0_p1.5,EZ_g2.0_p0.5,0.7396,0.3752,0.5827,0.5601,(n.s.)
+psi effect at gamma=8,EZ_g8.0_p1.5,EZ_g8.0_p0.5,0.8323,0.6238,0.4225,0.6727,(n.s.)
+gamma effect at psi=1.5,EZ_g8.0_p1.5,EZ_g2.0_p1.5,0.8323,0.7396,0.0316,0.9748,(n.s.)
+gamma effect at psi=0.5,EZ_g8.0_p0.5,EZ_g2.0_p0.5,0.6238,0.3752,0.2636,0.7921,(n.s.)
+EZ vs CRRA (CER winner),EZ_g8.0_p1.5,CRRA_g2.0,0.8323,0.3752,0.6374,0.5239,(n.s.)

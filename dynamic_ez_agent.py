@@ -142,6 +142,12 @@ class DistEZAgent:
         self.actor_opt = optim.Adam(self.actor.parameters(), lr=lr)
         self.critic_opt = optim.Adam(self.critic.parameters(), lr=lr)
         
+        # LR Schedulers: cosine annealing from lr down to lr/10 over T_max steps
+        # T_max is set lazily when first needed (see update())
+        self._scheduler_initialized = False
+        self._lr = lr
+        self._update_count = 0
+        
         # Replay Buffer
         self.replay_buffer = deque(maxlen=100000)
 
@@ -180,7 +186,8 @@ class DistEZAgent:
         return ce # (Batch, 1)
 
     def update(self):
-        if len(self.replay_buffer) < self.batch_size:
+        # Warmup: wait until buffer has at least 512 samples for stable initial gradients
+        if len(self.replay_buffer) < max(self.batch_size, 512):
             return 0.0, 0.0
             
         # Sample batch
@@ -265,6 +272,22 @@ class DistEZAgent:
         
         # Soft update target network
         self.soft_update()
+        
+        # Step LR schedulers (initialized lazily after first optimizer.step())
+        # Schedulers are created AFTER optimizer.step() has been called at least once,
+        # which is the correct PyTorch order: optimizer.step() -> scheduler.step()
+        self._update_count += 1
+        if not self._scheduler_initialized:
+            # T_max = 5000 update steps (roughly 2 episodes on 12-year data)
+            self.actor_scheduler = optim.lr_scheduler.CosineAnnealingLR(
+                self.actor_opt, T_max=5000, eta_min=self._lr / 10)
+            self.critic_scheduler = optim.lr_scheduler.CosineAnnealingLR(
+                self.critic_opt, T_max=5000, eta_min=self._lr / 10)
+            self._scheduler_initialized = True
+        else:
+            # Only step after initialization (not on the very first call)
+            self.actor_scheduler.step()
+            self.critic_scheduler.step()
         
         return critic_loss.item(), actor_loss.item()
 
