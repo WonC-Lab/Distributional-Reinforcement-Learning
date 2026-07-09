@@ -133,8 +133,8 @@ This prevents NaN gradients and enables stable training at all $(\gamma, \psi)$ 
 
 Increasing $\psi$ from 0.5 to 1.5 while holding $\gamma$ fixed significantly improves Sharpe ratio:
 
-- **$\gamma=2$**: $\Delta$Sharpe = +0.37, bootstrap 95% CI [0.13, 0.61], $p = 0.002^{***}$  
-- **$\gamma=8$**: $\Delta$Sharpe = +0.21, bootstrap 95% CI [−0.04, 0.46], $p = 0.049^{**}$
+- **$\gamma=2$**: $\Delta　Sharpe = +0.37, bootstrap 95% CI [0.13, 0.61], $p = 0.002^{***}$  
+- **$\gamma=8$**: $\Delta　Sharpe = +0.21, bootstrap 95% CI [−0.04, 0.46], $p = 0.049^{**}$
 
 This demonstrates that the IES degree of freedom provided by EZ utility has a measurable, statistically significant impact on portfolio performance — a degree of freedom unavailable under CRRA.
 
