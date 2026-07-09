@@ -25,18 +25,25 @@ where $\mathcal{R}_t(X) = \left( \mathbb{E}_t \left[ X^{1 - \gamma} \right] \rig
 ### 2. Key Theorems
 
 **Theorem 1 — Wealth-Homotheticity.** The value function scales linearly with wealth:
+
 $$V_t(W_t, \mathbf{s}_t) = W_t \cdot v_t(\mathbf{s}_t)$$
+
 This reduces the problem to solving in weight space, independent of absolute wealth.
 
 **Lemma 1 — Quantile Representation.** The certainty equivalent equals a Lebesgue integral over quantiles:
+
 $$\mathcal{R}_t(Y_{t+1}) = \left( \int_0^1 \left( q_Y(\tau) \right)^{1 - \gamma} d\tau \right)^{\frac{1}{1 - \gamma}}$$
+
 This justifies using IQN outputs directly as Bellman targets.
 
 **Theorem 2 — Contraction Mapping.** The EZ Bellman operator $\mathcal{T}$ is a local contraction on $\mathcal{C}(\mathcal{S})$ under the supremum norm when:
+
 $$\kappa \equiv \beta \cdot \sup_{s, \mathbf{w}} \left( \mathbb{E} \left[ R_p(\mathbf{w})^{1-\gamma} \mid s \right] \right)^{\frac{1 - 1/\psi}{1 - \gamma}} < 1$$
+
 guaranteeing convergence to a unique fixed-point value function $v^*$.
 
 **Theorem 3 — No-Trade Region.** Under proportional transaction cost `cost`, the investor does not rebalance when:
+
 $$\left\| \nabla_{\mathbf{w}} v_t(\mathbf{s}_t) \right\|_2 < \text{cost} \cdot (1 - c_t^*)$$
 
 ---
