@@ -129,7 +129,7 @@ This prevents NaN gradients and enables stable training at all $(\gamma, \psi)$ 
 
 ## Key Findings
 
-### 1. ψ (IES) Effect — Statistically Significant ✅
+### 1. ψ (IES) Effect — Statistically Significant 
 
 Increasing $\psi$ from 0.5 to 1.5 while holding $\gamma$ fixed significantly improves Sharpe ratio:
 
@@ -138,7 +138,7 @@ Increasing $\psi$ from 0.5 to 1.5 while holding $\gamma$ fixed significantly imp
 
 This demonstrates that the IES degree of freedom provided by EZ utility has a measurable, statistically significant impact on portfolio performance — a degree of freedom unavailable under CRRA.
 
-### 2. γ (Risk Aversion) Effect — Monotone MDD Reduction ✅
+### 2. γ (Risk Aversion) Effect — Monotone MDD Reduction 
 
 Holding $\psi$ fixed, increasing $\gamma$ from 2 to 8 **monotonically reduces maximum drawdown** across both IES configurations:
 
@@ -149,7 +149,7 @@ Holding $\psi$ fixed, increasing $\gamma$ from 2 to 8 **monotonically reduces ma
 
 This is consistent with the theoretical hedging channel: higher $\gamma$ induces rebalancing into safe-haven assets (GLD, TLT) during high-volatility regimes.
 
-### 3. CRRA Pathological Failure ✅
+### 3. CRRA Pathological Failure 
 
 - **CRRA $\gamma=8$**: Complete NaN failure across all 5 seeds. The constraint $\psi = 1/\gamma = 0.125$ creates extreme gradients ($Y^{-7}$) that overflow float32.
 - **CRRA $\gamma=2$** (= EZ $\gamma=2, \psi=0.5$): CER$_{\gamma=8} = -0.012\%$ (negative), confirming CRRA is economically suboptimal for high-risk-aversion investors.
